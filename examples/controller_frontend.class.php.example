@@ -42,6 +42,11 @@ class Controller_Frontend extends Controller_FrontendOriginal
      */
     const CITIES_PRICE_RATIO_FIELD_URN = 'price_ratio';
 
+    /**
+     * URN поля Cookie для городов
+     */
+    const COOKIE_CITY_VAR = 'city';
+
     public function getMainDomain()
     {
         $local = ($_SERVER['REMOTE_ADDR'] == '127.0.0.1');

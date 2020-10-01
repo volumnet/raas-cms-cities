@@ -18,6 +18,7 @@ use RAAS\CMS\Material_Type;
  * CITIES_MATERIAL_TYPE_URN - URN типа материалов городов
  * CITIES_DOMAIN_FIELD_URN - URN поля "домен" городов
  * CITIES_PRICE_RATIO_FIELD_URN - URN поля "наценка" городов
+ * COOKIE_CITY_VAR - URN поля Cookie для городов
  */
 trait ControllerFrontendTrait
 {
@@ -44,6 +45,12 @@ trait ControllerFrontendTrait
      * @var float
      */
     public $priceRatio;
+
+    /**
+     * Город определен явно
+     * @var bool
+     */
+    public $cityDetected = false;
 
     /**
      * Получает город по умолчанию (для основного домена)
@@ -231,6 +238,15 @@ trait ControllerFrontendTrait
             $sqlBind = [(int)$field->id, $this->host];
             $sqlResult = Material::_SQL()->getvalue([$sqlQuery, $sqlBind]);
             if ($sqlResult) {
+                $this->cityDetected = true;
+                if (static::COOKIE_CITY_VAR) {
+                    setcookie(
+                        static::COOKIE_CITY_VAR,
+                        (int)$sqlResult,
+                        time() + Application::i()->registryGet('cookieLifetime') * 86400,
+                        '/'
+                    );
+                }
                 return new Material((int)$sqlResult);
             }
         }
