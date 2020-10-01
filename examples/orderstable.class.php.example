@@ -1,0 +1,21 @@
+<?php
+/**
+ * Таблица заказов
+ */
+namespace RAAS\CMS\Shop;
+
+use SOME\ClassImporter;
+use RAAS\CMS\Cities\OrdersTableTrait as CitiesOrdersTableTrait;
+
+ClassImporter::import(
+    Module::i()->classesDir . '/forms-n-tables/orderstable.class.php',
+    'OrdersTableOriginal'
+);
+
+/**
+ * Класс таблицы заказов
+ */
+class OrdersTable extends OrdersTableOriginal
+{
+    use CitiesOrdersTableTrait;
+}

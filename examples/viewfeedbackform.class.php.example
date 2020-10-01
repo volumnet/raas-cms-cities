@@ -1,0 +1,21 @@
+<?php
+/**
+ * Форма просмотра сообщения обратной связи
+ */
+namespace RAAS\CMS;
+
+use SOME\ClassImporter;
+use RAAS\CMS\Cities\ViewFeedbackFormTrait as CitiesViewFeedbackFormTrait;
+
+ClassImporter::import(
+    Package::i()->classesDir . '/forms-n-tables/viewfeedbackform.class.php',
+    'ViewFeedbackFormOriginal'
+);
+
+/**
+ * Класс формы просмотра сообщения обратной связи
+ */
+class ViewFeedbackForm extends ViewFeedbackFormOriginal
+{
+    use CitiesViewFeedbackFormTrait;
+}

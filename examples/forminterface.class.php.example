@@ -1,0 +1,21 @@
+<?php
+/**
+ * Файл интерфейса формы
+ */
+namespace RAAS\CMS;
+
+use SOME\ClassImporter;
+use RAAS\CMS\Cities\FormInterfaceTrait as CitiesFormInterfaceTrait;
+
+ClassImporter::import(
+    Package::i()->classesDir . '/interfaces/forminterface.class.php',
+    'FormInterfaceOriginal'
+);
+
+/**
+ * Класс интерфейса формы
+ */
+class FormInterface extends FormInterfaceOriginal
+{
+    use CitiesFormInterfaceTrait;
+}

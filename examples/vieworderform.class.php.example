@@ -1,0 +1,21 @@
+<?php
+/**
+ * Форма просмотра заказа
+ */
+namespace RAAS\CMS\Shop;
+
+use SOME\ClassImporter;
+use RAAS\CMS\Cities\ViewOrderFormTrait as CitiesViewOrderFormTrait;
+
+ClassImporter::import(
+    Module::i()->classesDir . '/forms-n-tables/vieworderform.class.php',
+    'ViewOrderFormOriginal'
+);
+
+/**
+ * Класс формы просмотра заказа
+ */
+class ViewOrderForm extends ViewOrderFormOriginal
+{
+    use CitiesViewOrderFormTrait;
+}

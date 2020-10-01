@@ -1,0 +1,50 @@
+<?php
+/**
+ * Контроллер сайта
+ */
+namespace RAAS;
+
+use SOME\ClassImporter;
+use RAAS\CMS\Package as CMSPackage;
+use RAAS\CMS\Cities\ControllerFrontendTrait as CitiesControllerFrontendTrait;
+
+ClassImporter::import(
+    __DIR__ . '/../../vendor/volumnet/raas.cms/classes/controller_frontend.class.php',
+    'Controller_FrontendOriginal'
+);
+
+class Controller_Frontend extends Controller_FrontendOriginal
+{
+    use CitiesControllerFrontendTrait;
+
+    /**
+     * ID# города по умолчанию
+     */
+    const DEFAULT_CITY_ID = 0;
+
+    /**
+     * ID# компании
+     */
+    const COMPANY_ID = 0;
+
+    /**
+     * URN типа материалов городов
+     */
+    const CITIES_MATERIAL_TYPE_URN = 'cities';
+
+    /**
+     * URN поля "домен" городов
+     */
+    const CITIES_DOMAIN_FIELD_URN = 'domain';
+
+    /**
+     * URN поля "наценка" городов
+     */
+    const CITIES_PRICE_RATIO_FIELD_URN = 'price_ratio';
+
+    public function getMainDomain()
+    {
+        $local = ($_SERVER['REMOTE_ADDR'] == '127.0.0.1');
+        return $local ? 'lab' : 'lab.volumnet.ru';
+    }
+}

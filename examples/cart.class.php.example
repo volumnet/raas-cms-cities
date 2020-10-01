@@ -1,0 +1,21 @@
+<?php
+/**
+ * Файл класса корзины
+ */
+namespace RAAS\CMS\Shop;
+
+use SOME\ClassImporter;
+use RAAS\CMS\Cities\CartTrait as CitiesCartTrait;
+
+ClassImporter::import(
+    Module::i()->classesDir . '/semantic/cart.class.php',
+    'Cart'
+);
+
+/**
+ * Класс корзины
+ */
+class Cart extends CartOriginal
+{
+    use CitiesCartTrait;
+}

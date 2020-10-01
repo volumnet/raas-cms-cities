@@ -1,0 +1,21 @@
+<?php
+/**
+ * Страница
+ */
+namespace RAAS\CMS;
+
+use SOME\ClassImporter;
+use RAAS\CMS\Cities\PageTrait as CitiesPageTrait;
+
+ClassImporter::import(
+    Package::i()->classesDir . '/semantic/page.class.php',
+    'PageOriginal'
+);
+
+/**
+ * Класс страницы
+ */
+class Page extends PageOriginal
+{
+    use CitiesPageTrait;
+}

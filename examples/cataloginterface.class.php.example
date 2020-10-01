@@ -1,0 +1,21 @@
+<?php
+/**
+ * Интерфейс каталога
+ */
+namespace RAAS\CMS\Shop;
+
+use SOME\ClassImporter;
+use RAAS\CMS\Cities\CatalogInterfaceTrait as CitiesCatalogInterfaceTrait;
+
+ClassImporter::import(
+    Package::i()->classesDir . '/cataloginterface.class.php',
+    'CatalogInterfaceOriginal'
+);
+
+/**
+ * Класс интерфейса каталога
+ */
+class CatalogInterface extends CatalogInterfaceOriginal
+{
+    use CitiesCatalogInterfaceTrait;
+}

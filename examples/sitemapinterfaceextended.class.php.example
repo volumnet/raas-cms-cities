@@ -1,0 +1,26 @@
+<?php
+/**
+ * Файл класса расширенного интерфейса sitemap.xml
+ *
+ * Создает четыре файла - sitemap.xml (корневой),
+ *                        sitemap.sections.xml (разделы, кроме каталога),
+ *                        sitemap.catalog.xml (каталог),
+ *                        sitemap.goods.xml (товары)
+ */
+namespace RAAS\CMS;
+
+use SOME\ClassImporter;
+use RAAS\CMS\Cities\SitemapInterfaceExtendedTrait as CitiesSitemapInterfaceExtendedTrait;
+
+ClassImporter::import(
+    Package::i()->classesDir . '/interfaces/sitemapinterfaceextended.class.php',
+    'SitemapInterfaceExtendedOriginal'
+);
+
+/**
+ * Класс расширенного интерфейса sitemap.xml
+ */
+class SitemapInterfaceExtended extends SitemapInterfaceExtendedOriginal
+{
+    use CitiesSitemapInterfaceExtendedTrait;
+}

@@ -1,0 +1,21 @@
+<?php
+/**
+ * Таблица сообщений обратной связи
+ */
+namespace RAAS\CMS;
+
+use SOME\ClassImporter;
+use RAAS\CMS\Cities\FeedbackTableTrait as CitiesFeedbackTableTrait;
+
+ClassImporter::import(
+    Package::i()->classesDir . '/forms-n-tables/feedbacktable.class.php',
+    'FeedbackTableOriginal'
+);
+
+/**
+ * Класс таблицы сообщений обратной связи
+ */
+class FeedbackTable extends FeedbackTableOriginal
+{
+    use CitiesFeedbackTableTrait;
+}
