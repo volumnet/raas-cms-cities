@@ -5,7 +5,7 @@
 namespace RAAS\CMS\Shop;
 
 use SOME\ClassImporter;
-use RAAS\CMS\Cities\OrdersTableTrait as CitiesOrdersTableTrait;
+use RAAS\CMS\Cities\FeedbackTableTrait as CitiesFeedbackTableTrait;
 
 ClassImporter::import(
     Module::i()->classesDir . '/forms-n-tables/orderstable.class.php',
@@ -17,5 +17,5 @@ ClassImporter::import(
  */
 class OrdersTable extends OrdersTableOriginal
 {
-    use CitiesOrdersTableTrait;
+    use CitiesFeedbackTableTrait;
 }
