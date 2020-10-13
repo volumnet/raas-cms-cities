@@ -1,0 +1,5 @@
+ALTER TABLE cms_feedback 
+  ADD city_id INT UNSIGNED NOT NULL DEFAULT 0 COMMENT 'City ID#';
+
+ALTER TABLE cms_shop_orders
+  ADD city_id INT UNSIGNED NOT NULL DEFAULT 0 COMMENT 'City ID#';
