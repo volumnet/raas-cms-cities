@@ -16,7 +16,7 @@ trait CartTrait
     public function __get($var)
     {
         $val = parent::__get($var);
-        $ratio = $this->getController()->ratio;
+        $ratio = $this->getController()->priceRatio;
         switch ($var) {
             case 'items':
                 foreach ($val as $row) {
