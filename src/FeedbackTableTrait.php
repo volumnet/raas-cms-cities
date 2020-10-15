@@ -5,6 +5,7 @@
 namespace RAAS\CMS\Cities;
 
 use RAAS\Column;
+use RAAS\CMS\Material;
 
 /**
  * Трейт городов для таблицы обратной связи
