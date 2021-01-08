@@ -190,6 +190,7 @@ trait ControllerFrontendTrait
             'cityName' => ' ' . $this->city->name,
             'inCity' => ' ' . $this->city->in_city,
             'cityDescription' => $this->city->description,
+            'host' => $this->host,
         ];
         if ($this->city->street_address) {
             $addressItem = $this->city;

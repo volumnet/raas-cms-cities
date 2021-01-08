@@ -4,6 +4,8 @@
  */
 namespace RAAS\CMS\Cities;
 
+use SOME\SOME;
+
 /**
  * Трейт городов для интерфейса формы
  */
