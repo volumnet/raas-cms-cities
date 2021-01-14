@@ -241,11 +241,9 @@ trait ControllerFrontendTrait
             if ($sqlResult) {
                 $this->cityDetected = true;
                 if (static::COOKIE_CITY_VAR) {
-                    setcookie(
+                    Application::i()->setcookie(
                         static::COOKIE_CITY_VAR,
-                        (int)$sqlResult,
-                        time() + Application::i()->registryGet('cookieLifetime') * 86400,
-                        '/'
+                        (int)$sqlResult
                     );
                 }
                 return new Material((int)$sqlResult);
