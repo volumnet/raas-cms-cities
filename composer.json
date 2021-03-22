@@ -28,9 +28,7 @@
         ]
     },
     "autoload": {
-        "psr-4": {
-            "RAAS\\CMS\\Cities\\": "src/"
-        }
+        "classmap": ["src/"]
     },
     "repositories": [
         {
