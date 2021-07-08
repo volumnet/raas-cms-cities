@@ -187,6 +187,7 @@ trait ControllerFrontendTrait
     public function getTemplateData()
     {
         $result = [
+            'cityId' => $this->city->id,
             'cityName' => ' ' . $this->city->name,
             'inCity' => ' ' . $this->city->in_city,
             'cityDescription' => $this->city->description,
