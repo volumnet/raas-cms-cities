@@ -143,6 +143,7 @@ trait ControllerFrontendTrait
      */
     public function getSitemap($filepath)
     {
+        $this->citiesInit();
         $this->city = $this->getCity();
         $realFilepath = str_replace('.xml', '.tmp.xml', $filepath);
         $text = file_get_contents(Application::i()->baseDir . $realFilepath);
@@ -161,6 +162,7 @@ trait ControllerFrontendTrait
      */
     public function getYML($filepath)
     {
+        $this->citiesInit();
         $this->city = $this->getCity();
         $realFilepath = str_replace('.xml', '.tmp.xml', $filepath);
         $text = file_get_contents(Application::i()->baseDir . $realFilepath);

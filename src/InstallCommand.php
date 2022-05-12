@@ -33,6 +33,7 @@ class InstallCommand extends Command
             $inCityField = new Field([
                 'classname' => Material_Type::class,
                 'pid' => $materialTypeId,
+                'vis' => true,
                 'datatype' => 'text',
                 'urn' => 'in_city',
                 'name' => 'В городе',
@@ -43,11 +44,25 @@ class InstallCommand extends Command
             $domainField = new Field([
                 'classname' => Material_Type::class,
                 'pid' => $materialTypeId,
+                'vis' => true,
                 'datatype' => 'text',
+                'multiple' => true,
                 'urn' => 'domain',
                 'name' => 'Домен',
             ]);
             $domainField->commit();
+        }
+        if (!$materialType->fields['related']) {
+            $relatedField = new Field([
+                'classname' => Material_Type::class,
+                'pid' => $materialTypeId,
+                'vis' => false,
+                'datatype' => 'text',
+                'multiple' => true,
+                'urn' => 'related',
+                'name' => 'Связанные регионы',
+            ]);
+            $relatedField->commit();
         }
         try {
             $sqlQuery = "ALTER TABLE " . Feedback::_tablename()
