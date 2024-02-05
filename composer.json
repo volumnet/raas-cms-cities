@@ -2,6 +2,7 @@
     "name": "volumnet/raas-cms-cities",
     "description": "Cities adapter for RAAS4.CMS",
     "type": "library",
+    "version": "4.3.3",
     "license": "GPL-3.0-or-later",
     "authors": [
         {

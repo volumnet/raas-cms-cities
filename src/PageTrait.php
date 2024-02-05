@@ -4,8 +4,8 @@
  */
 namespace RAAS\CMS\Cities;
 
-use Twig_Environment;
-use Twig_Loader_String;
+use Twig\Environment;
+use Twig\Loader\ArrayLoader;
 use RAAS\Controller_Frontend;
 
 /**
@@ -19,8 +19,8 @@ trait PageTrait
     {
         $result = parent::process();
         $templateData = $this->getController()->getTemplateData();
-        $twig = new Twig_Environment(new Twig_Loader_String());
-        $result = $twig->render($result, $templateData);
+        $twig = new Environment(new ArrayLoader(['description' => $result]));
+        $result = $twig->render('description', $templateData);
         return $result;
     }
 }
