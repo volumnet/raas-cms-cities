@@ -217,7 +217,7 @@ trait ControllerFrontendTrait
                       . mb_substr($key, 1);
                 if ($val = $field->getValue()) {
                     $result[$key2] = $val;
-                } elseif ($field = $this->company->fields[$key]) {
+                } elseif ($field = ($this->company->fields[$key] ?? null)) {
                     $result[$key2] = $field->getValue();
                 } else {
                     $result[$key2] = '';
