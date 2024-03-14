@@ -21,7 +21,7 @@ trait FeedbackTableTrait
             if ($key == 'post_date') {
                 $newColumns['city_id'] = new Column([
                     'caption' => 'Город',
-                    'callback' => function ($row) use ($view) {
+                    'callback' => function ($row) {
                         if ($row->city_id) {
                             $city = new Material($row->city_id);
                             return '<a href="' . $this->view->url . '&action=view&id=' . (int)$row->id . '">' .
