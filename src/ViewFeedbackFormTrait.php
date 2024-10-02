@@ -11,7 +11,7 @@ use RAAS\Field as RAASField;
  */
 trait ViewFeedbackFormTrait
 {
-    protected function getDetails()
+    protected function getDetails(): array
     {
         $arr = parent::getDetails();
         $newArr = [];

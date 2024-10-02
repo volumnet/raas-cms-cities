@@ -35,12 +35,6 @@ trait ControllerFrontendTrait
     public $city;
 
     /**
-     * Компания
-     * @var Material
-     */
-    public $company;
-
-    /**
      * Множитель цены
      * @var float
      */
