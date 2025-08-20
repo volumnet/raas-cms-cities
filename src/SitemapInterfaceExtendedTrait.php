@@ -17,9 +17,17 @@ trait SitemapInterfaceExtendedTrait
     ) {
         parent::process($catalogMTypeURN, $catalogPageUrl);
         $baseDir = Application::i()->baseDir;
-        rename($baseDir . '/sitemap.xml', $baseDir . '/sitemap.tmp.xml');
-        rename($baseDir . '/sitemap.sections.xml', $baseDir . '/sitemap.sections.tmp.xml');
-        rename($baseDir . '/sitemap.catalog.xml', $baseDir . '/sitemap.catalog.tmp.xml');
-        rename($baseDir . '/sitemap.goods.xml', $baseDir . '/sitemap.goods.tmp.xml');
+        if (is_file($baseDir . '/sitemap.xml')) {
+            rename($baseDir . '/sitemap.xml', $baseDir . '/sitemap.tmp.xml');
+        }
+        if (is_file($baseDir . '/sitemap.sections.xml')) {
+            rename($baseDir . '/sitemap.sections.xml', $baseDir . '/sitemap.sections.tmp.xml');
+        }
+        if (is_file($baseDir . '/sitemap.catalog.xml')) {
+            rename($baseDir . '/sitemap.catalog.xml', $baseDir . '/sitemap.catalog.tmp.xml');
+        }
+        if (is_file($baseDir . '/sitemap.goods.xml')) {
+            rename($baseDir . '/sitemap.goods.xml', $baseDir . '/sitemap.goods.tmp.xml');
+        }
     }
 }

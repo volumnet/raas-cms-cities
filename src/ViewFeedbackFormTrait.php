@@ -5,26 +5,27 @@
 namespace RAAS\CMS\Cities;
 
 use RAAS\Field as RAASField;
+use RAAS\CMS\Feedback;
 
 /**
  * Трейт городов для формы просмотра сообщения обратной связи
  */
 trait ViewFeedbackFormTrait
 {
-    protected function getDetails(): array
+    protected function getPreStat(Feedback $item): array
     {
-        $arr = parent::getDetails();
-        $newArr = [];
+        $arr = parent::getPreStat($item);
+        $result = [];
         foreach ($arr as $key => $val) {
-            $newArr[$key] = $val;
+            $result[$key] = $val;
             if ($key == 'post_date') {
-                $newArr['city_id'] = $this->getFeedbackField([
+                $result['city_id'] = [
                     'name' => 'city_id',
                     'caption' => 'Город',
                     'template' => __DIR__ . '/feedback_view.field.inc.php',
-                ]);
+                ];
             }
         }
-        return $newArr;
+        return $result;
     }
 }

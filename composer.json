@@ -2,7 +2,7 @@
     "name": "volumnet/raas-cms-cities",
     "description": "Cities adapter for RAAS4.CMS",
     "type": "library",
-    "version": "4.4.0",
+    "version": "4.5.0",
     "license": "GPL-3.0-or-later",
     "authors": [
         {
@@ -13,7 +13,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "volumnet/raas.cms": ">=4.4.1",
+        "volumnet/raas.cms": ">=4.5.0",
         "twig/twig": "*"
     },
     "require-dev": {
